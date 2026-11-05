@@ -17,6 +17,7 @@ model User {
   name         String
   email        String        @unique
   passwordHash String
+  currencyCode String        @default("USD")
   transactions Transaction[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt

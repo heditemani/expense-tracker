@@ -19,7 +19,8 @@ A responsive personal finance dashboard built with Next.js, TypeScript, Prisma, 
 
 - Email/password sign-up and sign-in with bcrypt-hashed passwords and an HTTP-only, signed JWT session cookie.
 - User-scoped transaction create, list, update, and delete APIs.
-- Income/expense totals, monthly trends, category breakdown, date/category/type filters, text search, and CSV export.
+- Income/expense totals, daily income/expense trends for the last 30 days, category breakdown, date/category/type filters, text search, and CSV export.
+- Per-account display currency selection from 160+ ISO currency codes. Changing the display currency does not perform exchange-rate conversion.
 - Prisma schema supports SQLite for local use and can be adapted to a hosted relational database.
 
-All currency values are currently displayed in USD. Set `DATABASE_URL` in `.env` to configure the database connection.
+Set `DATABASE_URL` in `.env` to configure the database connection.

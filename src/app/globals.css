@@ -32,7 +32,11 @@ a{color:inherit;text-decoration:none}
 .main-panel{margin-left:238px;min-height:100vh}
 .topbar{height:64px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 42px}
 .breadcrumb{color:#98998f;font-size:12px}.breadcrumb span{margin:0 9px;color:#cbcbc3}.breadcrumb strong{color:#53594f;font-weight:600}
-.topbar-right{display:flex;align-items:center;gap:20px}.today-label{color:#85877e;display:flex;align-items:center;gap:7px;font-size:11px}.top-avatar{width:30px;height:30px;border:0;font:600 11px var(--sans)}
+.topbar-right{display:flex;align-items:center;gap:17px}.today-label{color:#85877e;display:flex;align-items:center;gap:7px;font-size:11px}.top-avatar{width:30px;height:30px;border:0;font:600 11px var(--sans)}
+.currency-picker{height:30px;max-width:205px;display:flex;align-items:center;gap:6px;position:relative;padding:0 7px;border:1px solid #eeefe9;border-radius:5px;background:#fff;color:#8f9188}
+.currency-picker>span{font-size:9px;white-space:nowrap}
+.currency-picker select{width:133px;appearance:none;border:0;outline:0;background:transparent;color:#62675e;font-size:10px;padding-right:15px;cursor:pointer}
+.currency-picker>svg{position:absolute;right:6px;pointer-events:none}
 .dashboard-content{max-width:1330px;padding:37px 43px 20px;margin:0 auto}
 .welcome-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:26px}
 .eyebrow{display:flex;align-items:center;gap:7px;color:#899183;font-size:9px;letter-spacing:1.4px;font-weight:700}
@@ -146,5 +150,92 @@ tbody td:nth-last-child(2){min-width:105px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(min-width:1450px){.dashboard-content{padding-top:43px}.summary-card{min-height:132px;padding:18px}.trend-panel,.category-panel{min-height:315px}.chart-area{height:205px}}
 @media(max-width:1100px){.sidebar{width:205px}.main-panel{margin-left:205px}.dashboard-content{padding-left:26px;padding-right:26px}.topbar{padding:0 26px}.summary-grid{grid-template-columns:repeat(2,1fr)}.chart-grid{grid-template-columns:1.35fr 1fr}.filters-row{gap:6px}.date-filter input{width:95px}}
-@media(max-width:760px){.sidebar{position:relative;width:auto;height:56px;inset:auto;flex-direction:row;align-items:center;padding:0 17px;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:18px}.workspace-label,.side-nav,.sidebar-tip,.profile-button{display:none}.main-panel{margin-left:0}.topbar{height:48px;padding:0 17px}.today-label{font-size:10px}.topbar-right{gap:11px}.dashboard-content{padding:26px 17px 18px}.welcome-row{align-items:flex-start;gap:12px;margin-bottom:20px}.welcome-row h1{font-size:24px}.welcome-row>div>p{font-size:11px;max-width:260px;line-height:1.55}.welcome-row>.button{flex:none;padding:9px 10px;font-size:10px;margin-top:8px}.summary-grid{gap:9px}.summary-card{min-height:112px;padding:13px}.balance-amount{font-size:21px}.metric-amount{font-size:18px;margin:12px 0 9px}.card-label{font-size:8px}.card-note{font-size:9px}.card-icon{width:25px;height:25px}.chart-grid{grid-template-columns:1fr;gap:10px;margin-top:10px}.trend-panel,.category-panel{min-height:275px;padding:15px}.chart-area{height:174px}.category-panel{min-height:275px}.donut-wrap{height:145px}.category-legend{max-width:370px;margin-left:auto;margin-right:auto}.transactions-panel{margin-top:10px;padding:15px 13px 0}.transactions-heading{align-items:flex-start}.transactions-heading p{max-width:205px;line-height:1.5}.filters-row{margin-top:13px}.search-field{flex-basis:100%}.filter-field{flex:1}.filter-field select{flex:1}.date-filter{flex:1;justify-content:space-between}.date-filter input{width:calc(100% - 28px);font-size:9px}.table-scroll{margin:0 -4px}.dashboard-footer{font-size:8px}.auth-page{grid-template-columns:1fr}.auth-side{display:none}.auth-main{min-height:100vh;padding:62px 23px 34px}.back-link{top:22px;left:22px}.auth-mobile-brand{display:flex;align-items:center;gap:9px;font:800 19px var(--serif);letter-spacing:-1px;margin-bottom:42px}.auth-card{max-width:380px}.auth-card-heading h2{font-size:23px}}
+@media(max-width:760px){.sidebar{position:relative;width:auto;height:56px;inset:auto;flex-direction:row;align-items:center;padding:0 17px;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:18px}.workspace-label,.side-nav,.sidebar-tip,.profile-button{display:none}.main-panel{margin-left:0}.topbar{height:48px;padding:0 17px}.today-label{font-size:10px}.topbar-right{gap:9px}.currency-picker{height:28px;max-width:72px;padding:0 5px}.currency-picker>span{display:none}.currency-picker select{width:48px;font-size:9px;padding-right:11px}.currency-picker>svg{right:3px}.dashboard-content{padding:26px 17px 18px}.welcome-row{align-items:flex-start;gap:12px;margin-bottom:20px}.welcome-row h1{font-size:24px}.welcome-row>div>p{font-size:11px;max-width:260px;line-height:1.55}.welcome-row>.button{flex:none;padding:9px 10px;font-size:10px;margin-top:8px}.summary-grid{gap:9px}.summary-card{min-height:112px;padding:13px}.balance-amount{font-size:21px}.metric-amount{font-size:18px;margin:12px 0 9px}.card-label{font-size:8px}.card-note{font-size:9px}.card-icon{width:25px;height:25px}.chart-grid{grid-template-columns:1fr;gap:10px;margin-top:10px}.trend-panel,.category-panel{min-height:275px;padding:15px}.chart-area{height:174px}.category-panel{min-height:275px}.donut-wrap{height:145px}.category-legend{max-width:370px;margin-left:auto;margin-right:auto}.transactions-panel{margin-top:10px;padding:15px 13px 0}.transactions-heading{align-items:flex-start}.transactions-heading p{max-width:205px;line-height:1.5}.filters-row{margin-top:13px}.search-field{flex-basis:100%}.filter-field{flex:1}.filter-field select{flex:1}.date-filter{flex:1;justify-content:space-between}.date-filter input{width:calc(100% - 28px);font-size:9px}.table-scroll{margin:0 -4px}.dashboard-footer{font-size:8px}.auth-page{grid-template-columns:1fr}.auth-side{display:none}.auth-main{min-height:100vh;padding:62px 23px 34px}.back-link{top:22px;left:22px}.auth-mobile-brand{display:flex;align-items:center;gap:9px;font:800 19px var(--serif);letter-spacing:-1px;margin-bottom:42px}.auth-card{max-width:380px}.auth-card-heading h2{font-size:23px}}
 @media(max-width:410px){.dashboard-content{padding-left:12px;padding-right:12px}.welcome-row h1{font-size:21px}.welcome-row>.button{gap:5px;padding:8px}.summary-card{padding:11px 10px}.card-note{font-size:8px}.metric-amount{font-size:16px}.balance-amount{font-size:19px}.date-filter{padding:0 5px}.date-filter input{font-size:8px}.today-label{font-size:9px}.filters-row .filter-field{padding:0 6px}.filter-field select{font-size:9px}}
+
+body{font-size:15px;-webkit-font-smoothing:auto;text-rendering:optimizeLegibility}
+.workspace-label{font-size:10px;color:#777b72}
+.nav-item{font-size:14px}
+.sidebar-tip strong{font-size:13px}
+.sidebar-tip p{font-size:12px;color:#6f746a}
+.profile-copy strong{font-size:12px}
+.profile-copy small{font-size:11px;color:#74786f}
+.breadcrumb{font-size:13px;color:#777b72}
+.today-label{font-size:12px;color:#666b62}
+.currency-picker>span{font-size:10px}
+.currency-picker select{font-size:11px}
+.eyebrow{font-size:10px;color:#70796d}
+.welcome-row>div>p{font-size:13px;color:#666c62}
+.button{font-size:12px}
+.card-label{font-size:10px;color:#6f7469}
+.balance-amount{font-size:27px}
+.metric-amount{font-size:23px}
+.card-note{font-size:11px;color:#72776d}
+.positive-note{color:#526f52}
+.balance-card .card-note>span:last-child{color:#74796e}
+.panel-heading h2,.transactions-heading h2{font-size:16px}
+.panel-heading p,.transactions-heading p{font-size:12px;color:#74786f}
+.range-badge{font-size:9px;color:#74786f}
+.chart-legend{font-size:11px;color:#686d63}
+.donut-center strong{font-size:18px}
+.donut-center span{font-size:10px;color:#73776e}
+.category-line{font-size:11px;color:#62675e}
+.category-line strong{color:#41473f}
+.count-badge{font-size:10px;color:#60665c}
+.export-button{font-size:11px}
+.search-field,.filter-field,.date-filter{height:35px}
+.search-field input,.filter-field select{font-size:11px;color:#555b52}
+.search-field input::placeholder{color:#777c72}
+.filter-field>svg:first-child{color:#73786e}
+.date-filter span,.date-filter input{font-size:10px;color:#5e645a}
+thead th{font-size:9px;color:#74796f}
+tbody td{font-size:12px;color:#5e645a}
+.transaction-name strong{font-size:12px;color:#3e443c}
+.transaction-name small{font-size:10px;color:#73786e}
+.category-pill{font-size:10px;color:#5d6359}
+.date-cell{color:#5f655b}
+.type-label{font-size:10px}
+.type-label-income{color:#526f52}
+.type-label-expense{color:#a9604b}
+.amount-cell{font-size:12px;color:#41473f}
+.amount-cell.amount-income{color:#526f52}
+.table-footer{font-size:10px;color:#6e7369}
+.table-footer strong{color:#454b43}
+.table-footer>span:last-child{color:#526f52}
+.empty-chart,.empty-category{font-size:12px;color:#646a60}
+.empty-chart small,.empty-category small{font-size:11px;color:#72776d}
+.empty-category strong{font-size:12px;color:#4e554b}
+.empty-transactions>strong{font-size:14px}
+.empty-transactions p{font-size:12px;color:#6e7369}
+.dashboard-footer{font-size:10px;color:#73786e}
+.loading-screen{font-size:14px;color:#5e655a}
+.modal-heading h2{font-size:22px}
+.modal-heading p{font-size:12px;color:#6f746a}
+.transaction-form>label,.transaction-form .form-two-col>label{font-size:12px;color:#4f554c}
+.transaction-form input:not([type=radio]),.transaction-form select{font-size:13px}
+.auth-pitch>p{font-size:14px;color:#626b5f}
+.pitch-stat strong{font-size:12px}
+.pitch-stat small{font-size:11px;color:#71776c}
+.auth-footer{font-size:11px;color:#73796c}
+.auth-card-heading h2{font-size:27px}
+.auth-card-heading p{font-size:13px;color:#6e7369}
+.auth-form>label{font-size:12px;color:#4f554c}
+.auth-form input{font-size:13px}
+.auth-form input::placeholder{color:#777c73}
+.auth-switch{font-size:12px;color:#666b62}
+.auth-privacy{font-size:10px;color:#74796f}
+
+@media(max-width:760px){
+  .card-label{font-size:9px}
+  .card-note{font-size:10px}
+  .metric-amount{font-size:20px}
+  .balance-amount{font-size:23px}
+  .today-label{font-size:11px}
+  .dashboard-footer{font-size:9px}
+}
+
+@media(max-width:410px){
+  .card-note{font-size:9px}
+  .metric-amount{font-size:18px}
+  .balance-amount{font-size:21px}
+}

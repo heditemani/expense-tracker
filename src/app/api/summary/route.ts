@@ -19,24 +19,32 @@ export async function GET() {
     .filter((transaction) => transaction.type === "EXPENSE")
     .reduce((sum, transaction) => sum + transaction.amount, 0);
 
-  const monthly = new Map<string, { month: string; income: number; expenses: number }>();
+  const today = new Date();
+  const endDay = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
+  const firstDay = endDay - 29 * 24 * 60 * 60 * 1000;
+  const daily = new Map<string, { date: string; income: number; expenses: number }>();
+  for (let day = firstDay; day <= endDay; day += 24 * 60 * 60 * 1000) {
+    const date = new Date(day).toISOString().slice(0, 10);
+    daily.set(date, { date, income: 0, expenses: 0 });
+  }
+
   const categories = new Map<string, number>();
   for (const transaction of transactions) {
-    const month = `${transaction.date.getUTCFullYear()}-${String(transaction.date.getUTCMonth() + 1).padStart(2, "0")}`;
-    const entry = monthly.get(month) ?? { month, income: 0, expenses: 0 };
-    if (transaction.type === "INCOME") entry.income += transaction.amount;
-    else {
-      entry.expenses += transaction.amount;
+    const date = transaction.date.toISOString().slice(0, 10);
+    const entry = daily.get(date);
+    if (transaction.type === "INCOME") {
+      if (entry) entry.income += transaction.amount;
+    } else {
       categories.set(transaction.category, (categories.get(transaction.category) ?? 0) + transaction.amount);
+      if (entry) entry.expenses += transaction.amount;
     }
-    monthly.set(month, entry);
   }
 
   return NextResponse.json({
     income,
     expenses,
     balance: income - expenses,
-    monthly: [...monthly.values()].slice(-6),
+    daily: [...daily.values()],
     categories: [...categories].map(([category, amount]) => ({ category, amount })),
   });
 }
