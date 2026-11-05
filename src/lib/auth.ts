@@ -1,4 +1,5 @@
-import { SignJWT, jwtVerify } from "jose";
+import { SignJWT } from "jose/jwt/sign";
+import { jwtVerify } from "jose/jwt/verify";
 
 export const AUTH_COOKIE = "expense_tracker_session";
 const SESSION_DURATION_SECONDS = 60 * 60 * 24 * 7;
@@ -22,8 +23,9 @@ export async function createSessionToken(userId: string) {
 
 export async function getUserIdFromToken(token?: string) {
   if (!token) return null;
+  const secret = getSecret();
   try {
-    const { payload } = await jwtVerify(token, getSecret());
+    const { payload } = await jwtVerify(token, secret);
     return typeof payload.sub === "string" ? payload.sub : null;
   } catch {
     return null;

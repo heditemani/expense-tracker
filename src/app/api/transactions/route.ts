@@ -18,6 +18,12 @@ export async function GET(request: Request) {
   const type = params.get("type");
   const category = params.get("category");
 
+  const validDate = (value: string | null) =>
+    value === null || (/^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T00:00:00.000Z`)));
+  if (!validDate(from) || !validDate(to) || (from && to && from > to)) {
+    return NextResponse.json({ error: "Date filters must be valid and in chronological order." }, { status: 400 });
+  }
+
   const date = from || to
     ? {
         ...(from ? { gte: new Date(`${from}T00:00:00.000Z`) } : {}),
